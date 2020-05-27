@@ -1,14 +1,6 @@
 const express = require('express');
 const app = express();
-const colors = require('colors');
 
-colors.setTheme({
-  info: 'bgGreen',
-  help: 'cyan',
-  warn: 'yellow',
-  success: 'bgBlue',
-  error: 'red'
-});
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
 app.get('/api/v1', function (req, res) {

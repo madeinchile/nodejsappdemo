@@ -1,5 +1,11 @@
 version: "3.7"
 services:
-  cicd:
+  backend:
     image: fjlopezs/nodejsdemo
-    build: .
+    build:
+      context: code
+    container_name: nodeapp
+    restart: always
+    ports:
+      - 80:3000
+    
