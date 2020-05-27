@@ -1,0 +1,5 @@
+version: "3.7"
+services:
+  cicd:
+    image: fjlopezs/nodejsdemo
+    build: .
