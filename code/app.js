@@ -3,18 +3,11 @@ const app = express();
 
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
-app.get('/api/v1', function (req, res) {
-    console.debug('GET /api/v1');
-    res.send({ message: 'api/v1' })
-});
-app.get('/api/v2', function (req, res) {
-    console.debug('GET /api/v2');
-    res.send({ message: 'api/v2' })
-});
 app.use(function(req, res) {
-    res.status(404).send({ message: 'Not Found :(' })
+    console.debug(req.method + " " +req.url);
+    res.send({ debug: req.method + " " +req.url })
 });
-const server = app.listen(3000, function () {
+const server = app.listen(80, function () {
   console.info('Running...');
 });
 
